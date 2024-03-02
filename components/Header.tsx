@@ -1,0 +1,11 @@
+import Navigation from "./Navigation"
+
+const Header = () => {
+  return (
+    <div className="w-full bg-white">
+        <Navigation/>
+    </div>
+  )
+}
+
+export default Header
