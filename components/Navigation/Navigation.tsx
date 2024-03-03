@@ -11,7 +11,7 @@ const Navigation = () => {
       </div>
       <ul>
         <li>
-            <Link href="/">tilin</Link>
+            <Link href="/" className="inline-block">tilin</Link>
         </li>
       </ul>
     </nav>
