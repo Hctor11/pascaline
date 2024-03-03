@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavigationLinks from "./NavigationLinks";
 
 const Navigation = () => {
   return (
@@ -9,11 +10,7 @@ const Navigation = () => {
           <Image src="/NewLogo.svg" alt="" width={100} height={100} />
         </Link>
       </div>
-      <ul>
-        <li>
-            <Link href="/" className="inline-block">tilin</Link>
-        </li>
-      </ul>
+      <NavigationLinks/>
     </nav>
   );
 };
