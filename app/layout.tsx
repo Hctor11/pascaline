@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pascaline - calculate everything",
-  description: "asdasdsd",
+  description: "All calculations in one place.",
 };
 
 export default function RootLayout({
