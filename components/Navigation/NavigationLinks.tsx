@@ -15,8 +15,8 @@ const NavigationLinks = () => {
         {
             links.map((link) => (
                 <>
-                    <div className="">
-                        <h1 className="text-sm">{link.name}</h1>
+                    <div className="md:mb-0 mb-6 cursor-pointer hover:text-gray-500">
+                        <h1 className="text-2xl md:text-sm">{link.name}</h1>
                     </div>
                 </>
             ))
