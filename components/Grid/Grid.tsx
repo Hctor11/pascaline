@@ -5,7 +5,7 @@ import Categories from "./Categories"
 
 const Grid = () => {
   return (
-    <main className="gap-2 grid grid-cols-1 p-2">
+    <main className="gap-2 mt-10 grid grid-cols-1 p-2 lg:w-[70%] lg:m-auto lg:mt-5">
         <SearchBar/>
         <TitleAndSections/>
         <Calculator/>
