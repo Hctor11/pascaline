@@ -26,7 +26,7 @@ const Navigation = () => {
       </ul>
 
       {/* responsive menu */}
-      <ul className={`md:hidden gap-5 bg-white absolute w-full h-full bottom-0 pt-24 duration-500 ${menuActive ? 'left-3' : 'left-[-100%]'}`}>
+      <ul className={`md:hidden gap-5 bg-white absolute w-full h-full bottom-0 pt-24 pl-4 duration-500 ${menuActive ? 'left-1' : 'left-[-100%]'}`}>
         <NavigationLinks />
       </ul>
     </nav>

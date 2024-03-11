@@ -1,10 +1,11 @@
+import SearchBar from "./SearchBar"
+import TitleAndSections from "./TitleAndSections"
 
 const Grid = () => {
   return (
-    <main className="container grid grid-cols-3 p-2">
-        <div className="tile bg-black">
-          <h1>deathclassic</h1>
-        </div>
+    <main className="container gap-2 grid grid-cols-1 p-2">
+        <SearchBar/>
+        <TitleAndSections/>
     </main>
   )
 }

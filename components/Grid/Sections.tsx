@@ -1,7 +1,7 @@
 
 const Sections = () => {
   return (
-    <div>Sections</div>
+    <div className="bg-zinc-500">Sections</div>
   )
 }
 

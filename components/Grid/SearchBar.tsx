@@ -1,7 +1,9 @@
 
 const SearchBar = () => {
   return (
-    <div>SearchBar</div>
+    <div className="bg-zinc-500 p-2 rounded-md">
+        <h1 className="text-white">Search bar</h1>
+    </div>
   )
 }
 
