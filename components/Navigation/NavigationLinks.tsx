@@ -35,7 +35,44 @@ const NavigationLinks = () => {
             ]
         }
     ]},
-
+    { name: "Physics" , submenu: true, sublink: [
+        {
+            head: "Physics22",
+            mySubLinks: [
+                {
+                    name: 'Free Fall',
+                    link: "/Phy/call"
+                },
+                {
+                    name: 'Motion',
+                    link: "/Phy/cotion"
+                },
+                {
+                    name: 'Coefficient',
+                    link: "/Phy/coefficient"
+                }
+            ]
+        }
+    ]},
+    { name: "Statistics" , submenu: true, sublink: [
+        {
+            head: "Statistics33",
+            mySubLinks: [
+                {
+                    name: 'Mean',
+                    link: "/Math/mean"
+                },
+                {
+                    name: 'Geometric Mean',
+                    link: "/Math/geomean"
+                },
+                {
+                    name: 'Standard Deviation',
+                    link: "/Math/std"
+                }
+            ]
+        }
+    ]},
   ];
 
   return (
