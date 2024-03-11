@@ -1,6 +1,6 @@
 const Title = () => {
   return (
-    <div className="bg-zinc-800 text-white p-2 rounded-md">
+    <div className="bg-zinc-800 text-white p-2 rounded-md md:pr-52">
       <h1 className="text-2xl">Pascaline = Math + Open Source.</h1>
       <p className="text-zinc-400 text-pretty font-light">
         Navigate math, physics, and stats with ease. Essential tools for
