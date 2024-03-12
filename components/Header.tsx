@@ -3,7 +3,7 @@ import Grid from "./Grid/Grid"
 
 const Header = () => {
   return (
-    <div className="w-full bg-zinc-600">
+    <div className="w-full bg-white">
         <Navigation/>
         <Grid/>
     </div>

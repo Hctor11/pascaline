@@ -16,6 +16,10 @@ interface SubLinks {
   link: string;
 }
 
+/*
+Heads will be in case I made a lot of calculators in different branches
+*/
+
 const NavigationLinks = () => {
   const links: Link[] = [
     {
@@ -69,7 +73,7 @@ const NavigationLinks = () => {
       submenu: true,
       sublink: [
         {
-          head: "Statistics33",
+          head: "Statistics33", 
           mySubLinks: [
             {
               name: "Mean",
@@ -93,11 +97,11 @@ const NavigationLinks = () => {
     <>
       {links.map((link) => (
         <>
-          <div className="md:mb-0 mb-6 cursor-pointer hover:text-gray-500">
+          <div className="md:mb-0 mb-6 cursor-pointer group hover:text-gray-500 ">
             <h1 className="text-2xl md:text-sm">{link.name}</h1>
             {link.submenu && (
               <div>
-                <div className="absolute top-10">
+                <div className="absolute top-6 hidden group-hover:block hover:block">
                   <div className="py-3">
                     <div className="w-2 h-2 left-3 absolute mt-2 bg-white rotate-45"></div>
                   </div>
