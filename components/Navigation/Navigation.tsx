@@ -30,7 +30,7 @@ const Navigation = () => {
           <NavigationLinks />
         </ul>
 
-        <Link href='' className="text-sm p-1 text-zinc-300 bg-zinc-900 rounded-md">
+        <Link href='' className="text-sm p-1 text-zinc-300 bg-zinc-900 rounded-md hover:text-zinc-500">
           About
         </Link>
 
