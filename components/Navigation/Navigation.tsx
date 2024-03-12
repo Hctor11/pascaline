@@ -30,6 +30,10 @@ const Navigation = () => {
           <NavigationLinks />
         </ul>
 
+        <Link href='' className="text-sm p-1 text-zinc-300 bg-zinc-900 rounded-md">
+          About
+        </Link>
+
         {/* responsive menu */}
         <ul
           className={`md:hidden gap-5 bg-white absolute w-full h-full bottom-0 pt-24 pl-4 duration-500 ${
