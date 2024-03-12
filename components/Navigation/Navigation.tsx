@@ -13,7 +13,7 @@ const Navigation = () => {
       <div className="lg:w-[70%] lg:m-auto md:px-5 py-3 px-3 flex items-center justify-between">
         <div className="cursor-pointer z-10 md:w-auto flex w-full justify-between">
           <Link href="/">
-            <Image src="/NewLogo.svg" alt="" width={100} height={100} />
+            <Image src="/NewLogo.svg" className="hover:invert-[30%] transition-all" alt="LOGO DEATHCLASSIC" width={100} height={100} />
           </Link>
           <div className="md:hidden" onClick={() => setMenuActive(!menuActive)}>
             <Image
@@ -30,7 +30,7 @@ const Navigation = () => {
           <NavigationLinks />
         </ul>
 
-        <Link href='' className="text-sm p-1 text-zinc-300 bg-zinc-900 rounded-md hover:text-zinc-500">
+        <Link href='' className="hidden md:inline-flex text-sm p-1 text-zinc-300 bg-zinc-600 rounded-md hover:text-zinc-500 hover:bg-zinc-200 transition-all">
           About
         </Link>
 

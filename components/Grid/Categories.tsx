@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Categories = () => {
   return (
-    <div className="grid grid-cols-3 gap-2">
+    <div className="grid md:grid-cols-3 gap-2">
       <Link href=''>
       <div className="bg-zinc-500 rounded-xl h-24 p-2">
         <h1>Cat 1</h1>

@@ -3,6 +3,7 @@ import type { Link } from "./LinksTypes";
 const links: Link[] = [
   {
     name: "Math",
+    mainLink: "math",
     submenu: true,
     sublink: [
       {
@@ -31,6 +32,7 @@ const links: Link[] = [
   },
   {
     name: "Physics",
+    mainLink: "phy",
     submenu: true,
     sublink: [
       {
@@ -54,6 +56,7 @@ const links: Link[] = [
   },
   {
     name: "Statistics",
+    mainLink: 'stats',
     submenu: true,
     sublink: [
       {

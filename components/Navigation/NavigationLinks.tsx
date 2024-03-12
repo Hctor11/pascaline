@@ -10,14 +10,11 @@ const NavigationLinks = () => {
     <>
       {links.map((link,id) => (
         <>
-          <div key={id} className="md:mb-0 mb-6 group hover:text-gray-500 ">
-            <h1 className="text-2xl md:text-sm cursor-default">{link.name}</h1>
+          <div key={id} className="md:mb-0 mb-6 group hover:text-gray-500">
+            <Link href={`/${link.mainLink}`} className="text-2xl p-1 md:text-sm cursor-pointer transition-all">{link.name}</Link>
             {link.submenu && (
               <div>
-                <div className="absolute top-6 hidden group-hover:block hover:block rounded-md">
-                  <div className="py-3">
-                    <div className="w-2 h-2 left-3 absolute mt-2 bg-white rotate-45"></div>
-                  </div>
+                <div className="absolute top-10 hidden group-hover:md:block hover:md:block rounded-md">
                   <div className="bg-white p-2 rounded-sm shadow-md">
                     {link.sublink?.map((sublinks,id) => (
                       <>

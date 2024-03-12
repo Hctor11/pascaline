@@ -1,5 +1,6 @@
 export interface Link {
     name: string;
+    mainLink: string;
     submenu: boolean;
     sublink: SubLinksContainer[];
   }
