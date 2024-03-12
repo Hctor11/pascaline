@@ -15,12 +15,13 @@ const Navigation = () => {
           <Link href="/">
             <Image src="/NewLogo.svg" className="hover:invert-[30%] transition-all" alt="LOGO DEATHCLASSIC" width={100} height={100} />
           </Link>
-          <div className="md:hidden" onClick={() => setMenuActive(!menuActive)}>
+          <div className="md:hidden transition-all" onClick={() => setMenuActive(!menuActive)}>
             <Image
               src={menuActive ? "/close-outline.svg" : "/menu-outline.svg"}
-              alt=""
+              alt="icon menu"
               width={32}
               height={32}
+              className="transition-all"
             />
           </div>
         </div>
