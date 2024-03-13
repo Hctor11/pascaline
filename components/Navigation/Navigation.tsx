@@ -37,7 +37,7 @@ const Navigation = () => {
 
         {/* responsive menu */}
         <ul
-          className={`md:hidden gap-5 bg-white absolute w-full h-full bottom-0 pt-24 pl-4 duration-500 ${
+          className={`md:hidden gap-5 touch-pan-x bg-white fixed overflow-hidden w-full h-full bottom-0 pt-24 pl-4 duration-500 ${
             menuActive ? "left-1" : "left-[-100%]"
           }`}
         >
