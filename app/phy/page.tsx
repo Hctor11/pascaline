@@ -1,7 +1,10 @@
+import CategoryIterator from "@/components/Utilities/CategoryIterator"
 
 const page = () => {
   return (
-    <div>PHY GENERAL page</div>
+    <div>
+        <CategoryIterator category="Physics"/>
+    </div>
   )
 }
 
