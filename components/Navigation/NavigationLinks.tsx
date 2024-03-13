@@ -1,5 +1,5 @@
 import Link from "next/link";
-import links from "./MyLinks";
+import links from "./Links";
 import { useState } from "react";
 
 const NavigationLinks = () => {

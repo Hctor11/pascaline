@@ -1,5 +1,5 @@
 import Link from "next/link";
-import links from "../Navigation/MyLinks";
+import links from "../Navigation/Links";
 
 const Categories = () => {
   return (
