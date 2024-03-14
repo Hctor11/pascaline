@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import footerLinks from "./FooterLinks";
+import FooterLinks from "./Links";
 
 const Footer = () => {
   return (
@@ -17,37 +17,20 @@ const Footer = () => {
               height={100}
             />
           </Link>
-          <div className="flex-col md:flex-row flex mx-3 lg:mx-0">
-            {footerLinks.map((category) => (
-              <>
-                <div className="mr-12 mb-8">
-                  <Link href={category.headlink}>
-                    <h1 className="text-md font-semibold hover:underline">
-                      {category.head}
-                    </h1>
-                  </Link>
-                  <div className="">
-                    {category.sublinks?.map((sublink) => (
-                      <>
-                        <Link
-                          className="list-none text-sm text-zinc-500 hover:underline"
-                          href={sublink.link}
-                        >
-                          <li>{sublink.title}</li>
-                        </Link>
-                      </>
-                    ))}
-                  </div>
-                </div>
-              </>
-            ))}
-          </div>
+          <FooterLinks/>
         </div>
         <div className="bg-black text-white ">
           <div className="lg:max-w-[75%] m-auto flex justify-between p-5">
             <p className="text-zinc-500">HR2024</p>
-            <Link href="" className="hover:underline">
-              Repository
+            <Link href="" className="hover:underline flex items-center gap-1">
+            <Image
+              src="/gh.svg"
+              className="hover:invert-[0.5]"
+              alt="GH"
+              width={18}
+              height={18}
+            />
+            
             </Link>
           </div>
         </div>
