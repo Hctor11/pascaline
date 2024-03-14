@@ -1,9 +1,7 @@
 import Link from "next/link";
 import links from "./Links";
-import { useState } from "react";
 
 const NavigationLinks = () => {
-  const [heading, setHeading] = useState('');
 
   return (
     <>
@@ -32,7 +30,7 @@ const NavigationLinks = () => {
                               <li key={sublinks.link}>
                                 <Link
                                   href={sublinks.link}
-                                  className="text-sm text-zinc-400 hover:text-zinc-500"
+                                  className="text-sm p-1 m-1 rounded-sm hover:bg-zinc-200 text-zinc-400 hover:text-zinc-500"
                                 >
                                   {sublinks.name}
                                 </Link>

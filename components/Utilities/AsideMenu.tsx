@@ -1,13 +1,13 @@
-import footerLinks from "./FooterLinks";
-import Link from "next/link";
+import Link from "next/link"
+import footerLinks from "../Footer/FooterLinks"
 
-const FooterLinks = () => {
+const AsideMenu = () => {
   return (
-    <>
-      <div className="flex-col md:flex-row flex mx-3 lg:mx-0">
+    <aside> 
+        <div className="hidden flex-col border rounded-md p-2 md:flex mx-3 lg:mx-0">
         {footerLinks.map((category) => (
           <>
-            <div className="mr-12 mb-8">
+            <div className="mr-6 mb-8 last:mb-0">
               <Link href={category.headlink}>
                 <h1 className="text-md font-semibold hover:underline">
                   {category.head}
@@ -29,8 +29,8 @@ const FooterLinks = () => {
           </>
         ))}
       </div>
-    </>
-  );
-};
+    </aside>
+  )
+}
 
-export default FooterLinks;
+export default AsideMenu

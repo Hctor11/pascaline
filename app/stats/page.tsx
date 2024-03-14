@@ -1,11 +1,14 @@
-import CategoryIterator from "@/components/Utilities/CategoryIterator"
+import CategoryIterator from "@/components/Utilities/CategoryIterator";
+import ContentContainer from "@/components/Utilities/ContentContainer";
 
 const page = () => {
   return (
-    <div>
-        <CategoryIterator category="Statistics"/>
-    </div>
-  )
-}
+    <>
+      <ContentContainer>
+        <CategoryIterator category="Statistics" />
+      </ContentContainer>
+    </>
+  );
+};
 
-export default page
+export default page;
