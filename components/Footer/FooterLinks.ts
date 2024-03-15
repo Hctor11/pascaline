@@ -15,12 +15,12 @@ const footerLinks: treeLink[] = [
     headlink: "/math",
     sublinks: [
       {
-        title: "Matrix",
+        title: "Matrix Operations",
         link: "/math/matrix",
       },
       {
-        title: "Matrix Determinant",
-        link: "/math/determinant",
+        title: "Two points Solver",
+        link: "math/twopoints",
       },
       {
         title: "Triange Solver",

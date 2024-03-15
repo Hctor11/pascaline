@@ -10,12 +10,12 @@ const links: Link[] = [
         head: "Matrix",
         mySubLinks: [
           {
-            name: "Matrix",
-            link: "/Math/Matrix",
+            name: "Matrix Operations",
+            link: "/math/matrix",
           },
           {
-            name: "Matrix Determinant",
-            link: "/Math/Determinant",
+            name: "Two points Solver",
+            link: "math/twopoints",
           },
         ],
       },
