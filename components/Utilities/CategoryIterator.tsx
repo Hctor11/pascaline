@@ -3,10 +3,11 @@ interface props {
 }
 
 import links from "../Navigation/Links";
+import Link from "next/link";
 
 const CategoryIterator = ({ category }: props) => {
   return (
-    <div>
+    <div className="flex my-2">
       {links.map((link) => (
         <>
           {link.name === category
@@ -15,7 +16,7 @@ const CategoryIterator = ({ category }: props) => {
                   <div className="">
                     {sublinks.mySubLinks.map((sublinks) => (
                       <>
-                        <div className="">{sublinks.name}</div>
+                        <Link href={sublinks.link} className="p-1 rounded-md border hover:bg-zinc-200 m-1 first:m-0">{sublinks.name}</Link>
                       </>
                     ))}
                   </div>
