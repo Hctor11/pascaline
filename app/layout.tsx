@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
-import { GeistSans } from 'geist/font/sans';
+import { GeistSans } from "geist/font/sans";
 
 const geist = GeistSans;
 
@@ -19,13 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+          rel="stylesheet"
+        />
+      </head>
       <body className={geist.className}>
         <div className="min-h-screen flex flex-col justify-between">
-        <Navigation/>
-        <main>
-        {children}
-        </main>
-        <Footer/>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
