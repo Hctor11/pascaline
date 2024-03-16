@@ -1,17 +1,17 @@
-import CategoryIterator from "@/components/Utilities/CategoryIterator"
-import ContentContainer from "@/components/Utilities/ContentContainer"
+import CategoryIterator from "@/components/Utilities/CategoryIterator";
+import ContentContainer from "@/components/Utilities/ContentContainer";
 
 const page = () => {
   return (
     <>
       <ContentContainer asideMenu={true}>
         <>
-        <h1 className="font-semibold text-2xl">All Math Calculators</h1>
-      <CategoryIterator category="Math"/>
+          <h1 className="font-semibold text-2xl">All Math Calculators</h1>
+          <CategoryIterator category="Math" />
         </>
       </ContentContainer>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
