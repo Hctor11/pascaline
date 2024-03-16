@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "mafs/core.css";
 
 @layer base {
     input[type="number"]::-webkit-inner-spin-button,

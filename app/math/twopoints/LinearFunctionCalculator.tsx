@@ -4,6 +4,7 @@ import { useState } from "react";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import PersonalizedInput from "./PersonalizedInput";
+import Plot from "./Plot";
 
 const LinearFunctionCalculator = () => {
   const [points, setPoints] = useState([
@@ -33,8 +34,8 @@ const LinearFunctionCalculator = () => {
 
   const calculateLinearFunction = () => {
     const [p1, p2] = points;
-    const m = (p2?.y - p1?.y) / (p2?.x - p1?.x);
-    const b = p1?.y - m * p1?.x;
+    const m = (p2!.y! - p1!.y!) / (p2?.x! - p1?.x!);
+    const b = p1!.y! - m * p1!.x!;
 
     let formattedM = "";
     if (m !== 0) {
@@ -100,6 +101,7 @@ const LinearFunctionCalculator = () => {
       <h1>
         <Latex>{result}</Latex>
       </h1>
+      <Plot/>
     </div>
   );
 };
