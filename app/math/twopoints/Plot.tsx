@@ -6,7 +6,7 @@ interface props{
 
 const ResultPlot = ({functionPlot}:props) => {
   return (
-    <div className="flex w-[60%] rounded-md">
+    <div className="flex md:w-[60%] rounded-md">
       <Mafs viewBox={{ x: [-5, 5], y: [-5,5]}}   preserveAspectRatio="contain">
         <Coordinates.Cartesian />
         <Plot.OfX y={functionPlot} color={Theme.pink}/>

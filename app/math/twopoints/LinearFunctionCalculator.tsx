@@ -102,7 +102,7 @@ const LinearFunctionCalculator = () => {
           Calcular
         </button>
       </div>
-        <div className={`flex flex-col items-center ${result === "" ? "invisible" : "visible"}`}>
+        <div className={`flex flex-col md:items-center ${result === "" ? "invisible" : "visible"}`}>
         <Latex>{result}</Latex>
       <ResultPlot functionPlot={plotFunc}/>
         </div>
