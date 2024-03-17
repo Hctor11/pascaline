@@ -4,7 +4,7 @@ import { useState } from "react";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import PersonalizedInput from "./PersonalizedInput";
-import Plot from "./Plot";
+import ResultPlot from "./Plot";
 
 const LinearFunctionCalculator = () => {
   const [points, setPoints] = useState([
@@ -31,6 +31,10 @@ const LinearFunctionCalculator = () => {
       return newPoints;
     });
   };
+
+  const plotFunc = (x: number) => {
+    return x * slope + intercept
+  }
 
   const calculateLinearFunction = () => {
     const [p1, p2] = points;
@@ -98,10 +102,10 @@ const LinearFunctionCalculator = () => {
           Calcular
         </button>
       </div>
-      <h1>
+        <div className={`flex flex-col items-center ${result === "" ? "invisible" : "visible"}`}>
         <Latex>{result}</Latex>
-      </h1>
-      <Plot/>
+      <ResultPlot functionPlot={plotFunc}/>
+        </div>
     </div>
   );
 };

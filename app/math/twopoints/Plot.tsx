@@ -1,13 +1,18 @@
-import { Mafs, Coordinates } from "mafs";
+import { Mafs, Coordinates, Plot, Theme } from "mafs";
 
-const Plot = () => {
+interface props{
+  functionPlot: (x:number) => number;
+}
+
+const ResultPlot = ({functionPlot}:props) => {
   return (
     <div className="flex w-[60%] rounded-md">
       <Mafs viewBox={{ x: [-5, 5], y: [-5,5]}}   preserveAspectRatio="contain">
         <Coordinates.Cartesian />
+        <Plot.OfX y={functionPlot} color={Theme.pink}/>
       </Mafs>
     </div>
   );
 };
 
-export default Plot;
+export default ResultPlot;
