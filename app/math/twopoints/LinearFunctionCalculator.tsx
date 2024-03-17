@@ -14,7 +14,8 @@ const LinearFunctionCalculator = () => {
 
   const [result, setResult] = useState("");
   const [slope, setSlope] = useState(0);
-  const [intercept, setIntercept] = useState(0);
+  const [Yintercept, setYIntercept] = useState(0);
+  const [Xintercept, setXIntercept] = useState(0);
 
   const handleInputChange = (
     index: number,
@@ -33,13 +34,14 @@ const LinearFunctionCalculator = () => {
   };
 
   const plotFunc = (x: number) => {
-    return x * slope + intercept
-  }
+    return x * slope + Yintercept;
+  };
 
   const calculateLinearFunction = () => {
     const [p1, p2] = points;
     const m = (p2!.y! - p1!.y!) / (p2?.x! - p1?.x!);
     const b = p1!.y! - m * p1!.x!;
+    const a = (-1 * b) / m;
 
     let formattedM = "";
     if (m !== 0) {
@@ -52,7 +54,8 @@ const LinearFunctionCalculator = () => {
     }
 
     setSlope(m);
-    setIntercept(b);
+    setYIntercept(b);
+    setXIntercept(a);
     setResult(
       `$$y = ${formattedM ? formattedM : ""}x ${
         b > 0 ? `+ ${formattedB}` : formattedB
@@ -102,10 +105,18 @@ const LinearFunctionCalculator = () => {
           Calcular
         </button>
       </div>
-        <div className={`flex flex-col md:items-center ${result === "" ? "invisible" : "visible"}`}>
-        <Latex>{result}</Latex>
-      <ResultPlot functionPlot={plotFunc}/>
-        </div>
+      <div
+        className={`flex flex-col md:items-center ${
+          result === "" ? "invisible" : "visible"
+        }`}
+      >
+        <Latex>{result}$\newline$</Latex>
+        <Latex>
+          $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
+          {Xintercept.toString()}$
+        </Latex>
+        <ResultPlot functionPlot={plotFunc} />
+      </div>
     </div>
   );
 };
