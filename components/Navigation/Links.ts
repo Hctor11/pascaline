@@ -13,18 +13,22 @@ const links: Link[] = [
             name: "Matrix Operations",
             link: "/math/matrix",
           },
-          {
-            name: "Two points Solver",
-            link: "math/twopoints",
-          },
         ],
       },
       {
-        head: "Trigonometry",
+        head: "Linear Equations",
         mySubLinks: [
           {
-            name: "Triange Solver",
-            link: "/Math/Triangle",
+            name: "Perpendicular Equation",
+            link: "/math/perpendicular",
+          },
+          {
+            name: "Parallel Equation",
+            link: "/math/parallel",
+          },
+          {
+            name: "Two points Solver",
+            link: "math/twopoints",
           },
         ],
       },
@@ -56,7 +60,7 @@ const links: Link[] = [
   },
   {
     name: "Statistics",
-    mainLink: 'stats',
+    mainLink: "stats",
     submenu: true,
     sublink: [
       {

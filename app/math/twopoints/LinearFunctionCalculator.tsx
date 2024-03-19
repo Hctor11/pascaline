@@ -39,7 +39,11 @@ const LinearFunctionCalculator = () => {
 
   const calculateLinearFunction = () => {
     const [p1, p2] = points;
-    const m = (p2!.y! - p1!.y!) / (p2?.x! - p1?.x!);
+    const m =
+      p2.y! === p1!.y! && p2.x! === p1.x!
+        ? 0
+        : (p2!.y! - p1!.y!) / (p2?.x! - p1?.x!);
+
     const b = p1!.y! - m * p1!.x!;
     const a = (-1 * b) / m;
 
@@ -57,7 +61,7 @@ const LinearFunctionCalculator = () => {
     setYIntercept(b);
     setXIntercept(a);
     setResult(
-      `$$y = ${formattedM ? formattedM : ""}x ${
+      `$$y = ${formattedM ? `${formattedM}x` : ""} ${
         b > 0 ? `+ ${formattedB}` : formattedB
       }$$`
     );
@@ -111,11 +115,14 @@ const LinearFunctionCalculator = () => {
         }`}
       >
         <Latex>{result}$\newline$</Latex>
-        <Latex>
-          $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
-          {Xintercept.toString()}$
-        </Latex>
         <ResultPlot functionPlot={plotFunc} />
+        <div className="">
+          <Latex>
+            $y\,intercept = {Yintercept.toString()} \newline 
+            x\,intercept = {Xintercept.toString()} \newline
+            slope = {slope.toString()}$
+          </Latex>
+        </div>
       </div>
     </div>
   );

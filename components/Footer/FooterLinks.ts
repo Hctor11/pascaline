@@ -23,8 +23,8 @@ const footerLinks: treeLink[] = [
         link: "math/twopoints",
       },
       {
-        title: "Triange Solver",
-        link: "/math/triangle",
+        title: "Perpendicular Equation",
+        link: "/math/perpendicular",
       },
     ],
   },
