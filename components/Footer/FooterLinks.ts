@@ -20,11 +20,15 @@ const footerLinks: treeLink[] = [
       },
       {
         title: "Two points Solver",
-        link: "math/twopoints",
+        link: "/math/twopoints",
       },
       {
         title: "Perpendicular Equation",
         link: "/math/perpendicular",
+      },
+      {
+        title: "Parallel Equation",
+        link: "/math/parallel",
       },
     ],
   },

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
-import PersonalizedInput from "./PersonalizedInput";
+import PersonalizedInput from "../../../components/Utilities/PersonalizedInput";
+import PersonalizedButton from "@/components/Utilities/PersonalizedButton";
 import ResultPlot from "./Plot";
 
 const LinearFunctionCalculator = () => {
@@ -102,12 +103,10 @@ const LinearFunctionCalculator = () => {
         </span>
       </div>
       <div>
-        <button
-          className="p-2 bg-zinc-400 rounded-md m-2"
-          onClick={calculateLinearFunction}
-        >
-          Calcular
-        </button>
+        <PersonalizedButton
+          content="calcular"
+          eventCallback={calculateLinearFunction}
+        />
       </div>
       <div
         className={`flex flex-col md:items-center ${
@@ -116,11 +115,10 @@ const LinearFunctionCalculator = () => {
       >
         <Latex>{result}$\newline$</Latex>
         <ResultPlot functionPlot={plotFunc} />
-        <div className="">
+        <div className="p-1 text-sm my-2 bg-transparent border backdrop-blur-md rounded-xl md:relative md:bottom-24 md:right-32 lg:static lg:flex lg:justify-start">
           <Latex>
-            $y\,intercept = {Yintercept.toString()} \newline 
-            x\,intercept = {Xintercept.toString()} \newline
-            slope = {slope.toString()}$
+            $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
+            {Xintercept.toString()} \newline slope = {slope.toString()}$
           </Latex>
         </div>
       </div>

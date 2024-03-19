@@ -28,7 +28,7 @@ const links: Link[] = [
           },
           {
             name: "Two points Solver",
-            link: "math/twopoints",
+            link: "/math/twopoints",
           },
         ],
       },
