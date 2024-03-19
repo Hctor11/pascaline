@@ -17,8 +17,8 @@ const NavigationLinks = () => {
             </Link>
             {link.submenu && (
               <div>
-                <div className="absolute top-9 hidden group-hover:md:block hover:md:block rounded-md">
-                  <div className="bg-white p-3 rounded-sm shadow-md">
+                <div className="absolute top-9 hidden group-hover:md:block hover:md:block">
+                  <div className="bg-white p-3 rounded-xl shadow-md">
                     {link.sublink?.map((sublinks, id) => (
                       <>
                         <div key={id} className="mb-2 px-2">
@@ -30,7 +30,7 @@ const NavigationLinks = () => {
                               <li key={sublinks.link}>
                                 <Link
                                   href={sublinks.link}
-                                  className="text-sm p-1 m-1 rounded-sm hover:bg-zinc-200 text-zinc-400 hover:text-zinc-500"
+                                  className="text-sm p-1 m-1 rounded-md hover:bg-zinc-200 text-zinc-400 hover:text-zinc-500"
                                 >
                                   {sublinks.name}
                                 </Link>
