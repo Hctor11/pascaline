@@ -4,7 +4,7 @@ interface props{
 
 const Paragraph = ({content}:props) => {
   return (
-    <p className="mb-3">{content}</p>
+    <p className="mb-3 md:pr-10 text-pretty">{content}</p>
   )
 }
 
