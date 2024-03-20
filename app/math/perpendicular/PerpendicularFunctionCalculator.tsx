@@ -9,17 +9,23 @@ const PerpendicularFunctionCalculator = () => {
     x: undefined,
     y: undefined,
   });
-  const [inputSlope, setInputSlope] = useState();
-  const [resultSlope, setResultSlope] = useState();
+  const [inputSlope, setInputSlope] = useState<number | null>(null);
+  const [resultSlope, setResultSlope] = useState(0);
   const [resultFunction, setResultFunction] = useState("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCoordinatesInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setPoint((prevPoint) => ({
       ...prevPoint,
       [name]: parseFloat(value),
     }));
   };
+
+  const handleSlopeInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setInputSlope(parseFloat(value));
+  }
+
 
   return (
     <div>
@@ -30,13 +36,13 @@ const PerpendicularFunctionCalculator = () => {
           <PersonalizedInput
             placeholder="x"
             name="x"
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => handleCoordinatesInputChange(e)}
             value={point.x}
           />{" "}
           <PersonalizedInput
             placeholder="y"
             name="y"
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => handleCoordinatesInputChange(e)}
             value={point.y}
           />
         </span>
@@ -45,11 +51,15 @@ const PerpendicularFunctionCalculator = () => {
           <PersonalizedInput
             placeholder="m"
             name="slope"
-            onChange={(e) => handleInputChange(e)}
-            value={point.y}
+            onChange={(e) => handleSlopeInputChange(e)}
+            value={`${inputSlope}`}
           />
         </span>
       </div>
+      <PersonalizedButton
+          content="calcular"
+          eventCallback={()=>{}}
+        />
     </div>
   );
 };
