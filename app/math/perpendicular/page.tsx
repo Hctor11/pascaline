@@ -1,8 +1,14 @@
+import ContentContainer from "@/components/Utilities/ContentContainer"
+import PerpendicularFunctionCalculator from "./PerpendicularFunctionCalculator"
 
 const page = () => {
   return (
     <div>
-        <h1>perpendicular</h1>
+      <ContentContainer asideMenu={true}>
+        <>
+          <PerpendicularFunctionCalculator/>
+        </>
+      </ContentContainer>
     </div>
   )
 }
