@@ -5,7 +5,7 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import PersonalizedInput from "../../../components/Utilities/PersonalizedInput";
 import PersonalizedButton from "@/components/Utilities/PersonalizedButton";
-import ResultPlot from "../../../components/Utilities/Plot";
+import ResultPlot from "../../../components/Utilities/ResultPlot";
 
 const LinearFunctionCalculator = () => {
   const [points, setPoints] = useState([
