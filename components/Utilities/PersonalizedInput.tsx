@@ -1,25 +1,26 @@
-
-interface props{
-    value: string | number | readonly string[] | undefined;
-    onChange: React.ChangeEventHandler<HTMLInputElement>;
-    name: string;
-    placeholder: string;
-    width?: string;
+interface Props {
+  value: string | number | readonly string[] | undefined;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  name: string;
+  placeholder: string;
+  width?: number;
 }
 
-const PersonalizedInput = ({value, onChange, name, placeholder, width}:props) => {
+const PersonalizedInput = ({ value, onChange, name, placeholder, width }: Props) => {
   return (
     <>
-        <input
-            type="number"
-            className={`border ${ width ? `w-${width}` : "w-12" } rounded-md text-center px-1`}
-            placeholder={placeholder}
-            name={name}
-            value={value}
-            onChange={onChange}
-          />
+      <input
+        type="number"
+        className={`border rounded-md text-center px-2 py-1 ${
+          width ? `w-${width}` : "w-12"
+        }`}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
     </>
-  )
-}
+  );
+};
 
-export default PersonalizedInput
+export default PersonalizedInput;
