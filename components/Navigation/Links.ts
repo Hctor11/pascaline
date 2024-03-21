@@ -7,15 +7,6 @@ const links: Link[] = [
     submenu: true,
     sublink: [
       {
-        head: "Matrix",
-        mySubLinks: [
-          {
-            name: "Matrix Operations",
-            link: "/math/matrix",
-          },
-        ],
-      },
-      {
         head: "Linear Equations",
         mySubLinks: [
           {
