@@ -3,6 +3,8 @@
 import { useState } from "react";
 import PersonalizedButton from "@/components/Utilities/PersonalizedButton";
 import PersonalizedInput from "@/components/Utilities/PersonalizedInput";
+import ResultPlot from "@/components/Utilities/ResultPlot";
+import Latex from "react-latex-next";
 
 const PerpendicularFunctionCalculator = () => {
   const [point, setPoint] = useState({
@@ -11,7 +13,8 @@ const PerpendicularFunctionCalculator = () => {
   });
   const [inputSlope, setInputSlope] = useState<number | null>(null);
   const [resultSlope, setResultSlope] = useState(0);
-  const [resultFunction, setResultFunction] = useState("");
+  const [resultYIntercept, setResultYIntercept] = useState(0)
+  const [result, setResult] = useState("");
 
   const handleCoordinatesInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -26,6 +29,25 @@ const PerpendicularFunctionCalculator = () => {
     setInputSlope(parseFloat(value));
   }
 
+   const calculateLinearFunction = () => {
+    
+    const {x,y} = point
+
+    const resSlope = -1/inputSlope!
+    const yIntercept = y! + -1*(resSlope*x!) 
+
+    setResultYIntercept(yIntercept)
+    setResultSlope(resSlope)
+    setResult(
+      `$$y = ${resSlope ? `${resSlope.toFixed(2)}x` : ""} ${
+        yIntercept > 0 ? `+ ${yIntercept.toFixed(2)}` : yIntercept.toFixed(2)
+      }$$`
+    );
+  };
+
+  const plotFunc = (x: number) => {
+    return x * resultSlope + resultYIntercept;
+  };
 
   return (
     <div>
@@ -58,8 +80,22 @@ const PerpendicularFunctionCalculator = () => {
       </div>
       <PersonalizedButton
           content="calcular"
-          eventCallback={()=>{}}
+          eventCallback={calculateLinearFunction}
         />
+      <div
+        className={`flex flex-col md:items-center ${
+          result === "" ? "invisible" : "visible"
+        }`}
+      >
+        <Latex>{result}$\newline$</Latex>
+        <ResultPlot functionPlot={plotFunc} />
+        <div className="p-1 text-sm my-2 bg-transparent border backdrop-blur-md rounded-xl md:relative md:bottom-24 md:right-32 lg:static lg:flex lg:justify-start">
+          {/* <Latex>
+            $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
+            {Xintercept.toString()} \newline slope = {slope.toString()}$
+          </Latex> */}
+        </div>
+      </div>
     </div>
   );
 };
