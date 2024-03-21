@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PersonalizedButton from "@/components/Utilities/PersonalizedButton";
 import PersonalizedInput from "@/components/Utilities/PersonalizedInput";
-import ResultPlot from "@/components/Utilities/ResultPlot";
+import DoubleResultPlot from "@/components/Utilities/DoubleResultPlot";
 import Latex from "react-latex-next";
 
 const PerpendicularFunctionCalculator = () => {
@@ -15,6 +15,7 @@ const PerpendicularFunctionCalculator = () => {
   const [resultSlope, setResultSlope] = useState(0);
   const [resultYIntercept, setResultYIntercept] = useState(0)
   const [result, setResult] = useState("");
+  const [baseYIntercept, setBaseYIntercept] = useState(0);
 
   const handleCoordinatesInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -32,15 +33,16 @@ const PerpendicularFunctionCalculator = () => {
    const calculateLinearFunction = () => {
     
     const {x,y} = point
-
     const resSlope = -1/inputSlope!
-    const yIntercept = y! + -1*(resSlope*x!) 
+    const resYIntercept = y! + -1*(resSlope*x!)
+    const baseIntercept =  y! + -1*(inputSlope!*x!)
 
-    setResultYIntercept(yIntercept)
+    setBaseYIntercept(baseIntercept)
+    setResultYIntercept(resYIntercept)
     setResultSlope(resSlope)
     setResult(
       `$$y = ${resSlope ? `${resSlope.toFixed(2)}x` : ""} ${
-        yIntercept > 0 ? `+ ${yIntercept.toFixed(2)}` : yIntercept.toFixed(2)
+        resYIntercept > 0 ? `+ ${resYIntercept.toFixed(2)}` : resYIntercept.toFixed(2)
       }$$`
     );
   };
@@ -48,6 +50,11 @@ const PerpendicularFunctionCalculator = () => {
   const plotFunc = (x: number) => {
     return x * resultSlope + resultYIntercept;
   };
+
+  const basePlotFunc = (x: number) => {
+    return x * inputSlope! + baseYIntercept;
+  };
+
 
   return (
     <div>
@@ -88,7 +95,7 @@ const PerpendicularFunctionCalculator = () => {
         }`}
       >
         <Latex>{result}$\newline$</Latex>
-        <ResultPlot functionPlot={plotFunc} />
+        <DoubleResultPlot resultFunctionPlot={plotFunc} baseFunctionPlot={basePlotFunc}/>
         <div className="p-1 text-sm my-2 bg-transparent border backdrop-blur-md rounded-xl md:relative md:bottom-24 md:right-32 lg:static lg:flex lg:justify-start">
           {/* <Latex>
             $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
