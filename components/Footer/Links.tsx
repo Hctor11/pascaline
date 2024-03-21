@@ -9,9 +9,9 @@ const FooterLinks = () => {
           <>
             <div className="mr-12 mb-8">
               <Link href={category.headlink}>
-                <h1 className="text-md font-semibold hover:underline">
+                <h3 className="text-md font-semibold hover:underline">
                   {category.head}
-                </h1>
+                </h3>
               </Link>
               <div className="">
                 {category.sublinks?.map((sublink) => (

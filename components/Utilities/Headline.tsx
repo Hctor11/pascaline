@@ -5,7 +5,7 @@ interface props{
 const Headline = ({headline}:props) => {
   return (
     <>
-        <h1 className="font-semibold text-2xl">{headline}</h1>
+        <h2 className="font-semibold text-2xl">{headline}</h2>
     </>
   )
 }

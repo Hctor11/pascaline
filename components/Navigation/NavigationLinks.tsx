@@ -22,9 +22,9 @@ const NavigationLinks = () => {
                     {link.sublink?.map((sublinks, id) => (
                       <>
                         <div key={id} className="mb-2 px-2">
-                          <h1 className="text-sm font-bold cursor-default">
+                          <span className="text-sm font-bold cursor-default">
                             {sublinks.head}
-                          </h1>
+                          </span>
                           {sublinks.mySubLinks.map((sublinks) => (
                             <>
                               <li key={sublinks.link}>

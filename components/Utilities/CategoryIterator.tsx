@@ -13,9 +13,9 @@ const CategoryIterator = ({ category }: props) => {
           {link.name === category
             ? link.sublink.map((sublinks) => (
                 <>
-                  <h1 className="font-semibold">
+                  <h2 className="font-semibold">
                     {sublinks.head}
-                  </h1>
+                  </h2>
                   <div className="flex gap-2">
                   {sublinks.mySubLinks.map((sublinks) => (
                     <>
