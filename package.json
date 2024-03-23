@@ -11,6 +11,7 @@
   "dependencies": {
     "geist": "^1.2.2",
     "mafs": "^0.18.3",
+    "mathjs": "^12.4.1",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",

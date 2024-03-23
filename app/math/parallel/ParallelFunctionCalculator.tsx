@@ -1,8 +1,12 @@
 import React from 'react'
+import PersonalizedButton from '@/components/Utilities/PersonalizedButton'
+import PersonalizedInput from '@/components/Utilities/PersonalizedInput'
 
 const ParallelFunctionCalculator = () => {
   return (
-    <div>ParallelFunctionCalculator</div>
+    <div>
+      <PersonalizedInput width={16}/>
+    </div>
   )
 }
 
