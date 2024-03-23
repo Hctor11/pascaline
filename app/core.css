@@ -4,7 +4,7 @@
     overflow: hidden;
     -webkit-user-select: none;
     user-select: none;
-    font-family: inherit;
+    font-family: --math-font;
     font-variant-numeric: tabular-nums;
     touch-action: none;
     outline: 0;

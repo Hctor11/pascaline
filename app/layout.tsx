@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import { GeistSans } from "geist/font/sans";
+import localFont from 'next/font/local'
+
+const MathFont = localFont({src: './fonts/lmmath-regular.otf',variable: '--math-font'})
 
 const geist = GeistSans;
 
