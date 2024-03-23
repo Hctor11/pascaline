@@ -70,36 +70,46 @@ const LinearFunctionCalculator = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 font-semibold">
         <span>
           Point A{" "}
-          <PersonalizedInput
-            placeholder="x1"
-            name="x"
-            onChange={(e) => handleInputChange(0, e)}
-            value={points[0].x}
-          />{" "}
-          <PersonalizedInput
-            placeholder="y1"
-            name="y"
-            onChange={(e) => handleInputChange(0, e)}
-            value={points[0].y}
-          />
+          <div className="">
+          <Latex>$A\, ($</Latex>
+            <PersonalizedInput
+              placeholder="x1"
+              name="x"
+              onChange={(e) => handleInputChange(0, e)}
+              value={points[0].x}
+            />
+            <Latex>$|$</Latex>
+            <PersonalizedInput
+              placeholder="y1"
+              name="y"
+              onChange={(e) => handleInputChange(0, e)}
+              value={points[0].y}
+            />
+            <Latex>$)$</Latex>
+          </div>
         </span>
         <span>
-          Point B{" "}
-          <PersonalizedInput
-            placeholder="x2"
-            name="x"
-            onChange={(e) => handleInputChange(1, e)}
-            value={points[1].x}
-          />{" "}
-          <PersonalizedInput
-            placeholder="y2"
-            name="y"
-            onChange={(e) => handleInputChange(1, e)}
-            value={points[1].y}
-          />
+          Point B:{" "}
+          <div className="">
+            <Latex>$B\, ($</Latex>
+            <PersonalizedInput
+              placeholder="x2"
+              name="x"
+              onChange={(e) => handleInputChange(1, e)}
+              value={points[1].x}
+            />
+            <Latex>$|$</Latex>
+            <PersonalizedInput
+              placeholder="y2"
+              name="y"
+              onChange={(e) => handleInputChange(1, e)}
+              value={points[1].y}
+            />
+            <Latex>$)$</Latex>
+          </div>
         </span>
       </div>
       <div>
