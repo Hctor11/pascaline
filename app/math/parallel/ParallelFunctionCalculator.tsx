@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { useState } from "react";
@@ -8,12 +8,13 @@ import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 
 const ParallelFunctionCalculator = () => {
+  const [inputPoint, setInputPoint] = useState({ x: undefined, y: undefined });
+  const [inputSlope, setInputSlope] = useState<number | null>(null);
+  const [inputIntercept, setInputIntercept] = useState<number | null>(null);
 
-  const [inputPoint, setInputPoint] = useState({x: undefined, y: undefined});
-  const [inputSlope, setInputSlope] = useState<number | null>(null)
-  const [inputIntercept, setInputIntercept] = useState<number | null>(null)
-
-  const handleCoordinatesInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCoordinatesInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, value } = event.target;
     setInputPoint((prevPoint) => ({
       ...prevPoint,
@@ -21,15 +22,19 @@ const ParallelFunctionCalculator = () => {
     }));
   };
 
-  const handleInputSlopeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputSlopeChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { value } = event.target;
     setInputSlope(parseFloat(value));
-  }
+  };
 
-  const handleInputInterceptChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputInterceptChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { value } = event.target;
     setInputIntercept(parseFloat(value));
-  }
+  };
 
   return (
     <div>
@@ -40,13 +45,19 @@ const ParallelFunctionCalculator = () => {
           <div className="flex items-center">
             <div className="flex items-center gap-1">
               <Latex>$y =\; $</Latex>
-              <PersonalizedInput value={`${inputSlope}`} onChange={(e) => handleInputSlopeChange(e)} placeholder="a" name="b" />
+              <PersonalizedInput
+                value={`${inputSlope}`}
+                onChange={(e) => handleInputSlopeChange(e)}
+                placeholder="a"
+                name="b"
+              />
               <Latex>$\;x$</Latex>
               <select name="" className="ml-3 p-1 border rounded-md" id="">
                 <option value="">+</option>
                 <option value="">-</option>
               </select>
-              <PersonalizedInput placeholder="b" name="b" />
+              <PersonalizedInput value={`${inputIntercept}`}
+                onChange={(e) => handleInputInterceptChange(e)}  placeholder="b" name="b" />
             </div>
           </div>
         </span>
@@ -55,13 +66,23 @@ const ParallelFunctionCalculator = () => {
           <div className="flex items-center">
             <div className="flex items-center gap-1">
               <Latex>$P\, ($</Latex>
-              <PersonalizedInput value={inputPoint.x} placeholder="x" name="x" onChange={(e) => handleCoordinatesInputChange(e)}/>
+              <PersonalizedInput
+                value={inputPoint.x}
+                placeholder="x"
+                name="x"
+                onChange={(e) => handleCoordinatesInputChange(e)}
+              />
               <Latex>$|$</Latex>
-              <PersonalizedInput value={inputPoint.y} placeholder="y" name="y" onChange={(e) => handleCoordinatesInputChange(e)}/>
+              <PersonalizedInput
+                value={inputPoint.y}
+                placeholder="y"
+                name="y"
+                onChange={(e) => handleCoordinatesInputChange(e)}
+              />
               <Latex>$)$</Latex>
             </div>
           </div>
-        <PersonalizedButton content="Calculate"/>
+          <PersonalizedButton eventCallback={() => {}} content="Calculate" />
         </span>
       </div>
     </div>
