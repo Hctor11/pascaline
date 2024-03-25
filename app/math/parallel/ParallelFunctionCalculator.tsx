@@ -10,8 +10,26 @@ import "katex/dist/katex.min.css";
 const ParallelFunctionCalculator = () => {
 
   const [inputPoint, setInputPoint] = useState({x: undefined, y: undefined});
-  const inputSlope = useState(null)
-  const inputIntercept = useState(null)
+  const [inputSlope, setInputSlope] = useState<number | null>(null)
+  const [inputIntercept, setInputIntercept] = useState<number | null>(null)
+
+  const handleCoordinatesInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setInputPoint((prevPoint) => ({
+      ...prevPoint,
+      [name]: parseFloat(value),
+    }));
+  };
+
+  const handleInputSlopeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setInputSlope(parseFloat(value));
+  }
+
+  const handleInputInterceptChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setInputIntercept(parseFloat(value));
+  }
 
   return (
     <div>
@@ -22,7 +40,7 @@ const ParallelFunctionCalculator = () => {
           <div className="flex items-center">
             <div className="flex items-center gap-1">
               <Latex>$y =\; $</Latex>
-              <PersonalizedInput placeholder="a" name="b" />
+              <PersonalizedInput value={`${inputSlope}`} onChange={(e) => handleInputSlopeChange(e)} placeholder="a" name="b" />
               <Latex>$\;x$</Latex>
               <select name="" className="ml-3 p-1 border rounded-md" id="">
                 <option value="">+</option>
@@ -37,9 +55,9 @@ const ParallelFunctionCalculator = () => {
           <div className="flex items-center">
             <div className="flex items-center gap-1">
               <Latex>$P\, ($</Latex>
-              <PersonalizedInput placeholder="x" name="x" />
+              <PersonalizedInput value={inputPoint.x} placeholder="x" name="x" onChange={(e) => handleCoordinatesInputChange(e)}/>
               <Latex>$|$</Latex>
-              <PersonalizedInput placeholder="y" name="y" />
+              <PersonalizedInput value={inputPoint.y} placeholder="y" name="y" onChange={(e) => handleCoordinatesInputChange(e)}/>
               <Latex>$)$</Latex>
             </div>
           </div>
