@@ -4,8 +4,11 @@ import ContentContainer from "@/components/Utilities/ContentContainer";
 const page = () => {
   return (
     <>
-      <ContentContainer asideMenu={false}>
-        <CategoryIterator category="Physics" />
+      <ContentContainer asideMenu={true}>
+        <>
+          <h1 className="font-semibold text-2xl">All Physics Calculators</h1>
+          <CategoryIterator category="Physics" />
+        </>
       </ContentContainer>
     </>
   );
