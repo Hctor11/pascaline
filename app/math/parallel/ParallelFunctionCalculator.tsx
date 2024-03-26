@@ -16,7 +16,6 @@ const ParallelFunctionCalculator = () => {
   const [result, setResult] = useState<string | null>("");
   const [resultIntercept, setResultIntercept] = useState<number | null>(null);
 
-
   const handleCoordinatesInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -46,24 +45,28 @@ const ParallelFunctionCalculator = () => {
   };
 
   const calculateParallelEquation = () => {
-    inputSign == '+' ? setInputIntercept(inputIntercept) : setInputIntercept(-1 * inputIntercept!)
-      const resIntercept = -1*(inputSlope!*inputPoint.x!) + inputPoint.y!;
-      setResult(
-        `$$y = ${inputSlope ? `${inputSlope.toFixed(2)}x` : ""} ${
-          resIntercept > 0 ? `+ ${resIntercept.toFixed(2)}` : resIntercept.toFixed(2)
-        }$$`
-      );
-  }
+    inputSign == "+"
+      ? setInputIntercept(inputIntercept)
+      : setInputIntercept(-1 * inputIntercept!);
 
-  const plotFunc = (x: number) => {
-    return x * inputSlope! + inputIntercept!;
+    const resIntercept = -1 * (inputSlope! * inputPoint.x!) + inputPoint.y!;
+    setResultIntercept(resIntercept)
+    setResult(
+      `$$y = ${inputSlope ? `${inputSlope.toFixed(2)}x` : ""} ${
+        resIntercept > 0
+          ? `+ ${resIntercept.toFixed(2)}`
+          : resIntercept.toFixed(2)
+      }$$`
+    );
   };
 
-  const basePlotFunc = (x: number) => {
+  const plotFunc = (x: number) => {
     return x * inputSlope! + resultIntercept!;
   };
 
-
+  const basePlotFunc = (x: number) => {
+    return x * inputSlope! + inputIntercept!;
+  };
 
   return (
     <div>
@@ -78,15 +81,24 @@ const ParallelFunctionCalculator = () => {
                 value={`${inputSlope}`}
                 onChange={(e) => handleInputSlopeChange(e)}
                 placeholder="a"
-                name="b"
+                name="a"
               />
               <Latex>$\;x$</Latex>
-              <select name="sign" onChange={(e) => handleSignChange(e)} className="ml-3 p-1 border rounded-md" id="">
+              <select
+                name="sign"
+                onChange={(e) => handleSignChange(e)}
+                className="ml-3 p-1 border rounded-md"
+                id=""
+              >
                 <option value="+">+</option>
                 <option value="-">-</option>
               </select>
-              <PersonalizedInput value={`${inputIntercept}`}
-                onChange={(e) => handleInputInterceptChange(e)}  placeholder="b" name="b" />
+              <PersonalizedInput
+                value={`${inputIntercept}`}
+                onChange={(e) => handleInputInterceptChange(e)}
+                placeholder="b"
+                name="b"
+              />
             </div>
           </div>
         </span>
@@ -111,7 +123,10 @@ const ParallelFunctionCalculator = () => {
               <Latex>$)$</Latex>
             </div>
           </div>
-          <PersonalizedButton eventCallback={() => calculateParallelEquation()} content="Calculate" />
+          <PersonalizedButton
+            eventCallback={() => calculateParallelEquation()}
+            content="Calculate"
+          />
         </span>
       </div>
       <div
@@ -120,7 +135,10 @@ const ParallelFunctionCalculator = () => {
         }`}
       >
         <Latex>{result!}$\newline$</Latex>
-        <DoubleResultPlot resultFunctionPlot={plotFunc} baseFunctionPlot={basePlotFunc}/>
+        <DoubleResultPlot
+          resultFunctionPlot={plotFunc}
+          baseFunctionPlot={basePlotFunc}
+        />
         <div className="p-1 text-sm my-2 bg-transparent border backdrop-blur-md rounded-xl md:relative md:bottom-24 md:right-32 lg:static lg:flex lg:justify-start">
           {/* <Latex>
             $y\,intercept = {Yintercept.toString()} \newline x\,intercept ={" "}
