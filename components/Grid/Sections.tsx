@@ -19,7 +19,7 @@ const Sections = () => {
             />
           </div>
         </Link>
-        <p>Math</p>
+        {/* <p>Math</p> */}
       </div>
       <div className="flex flex-col items-center">
         <Link href="/phy">
@@ -32,7 +32,7 @@ const Sections = () => {
             />
           </div>
         </Link>
-        <p>Physics</p>
+        {/* <p>Physics</p> */}
       </div>
       <div className="flex flex-col items-center">
         <Link href="/stats">
@@ -45,7 +45,7 @@ const Sections = () => {
             />
           </div>
         </Link>
-        <p>Statistics</p>
+        {/* <p>Statistics</p> */}
       </div>
     </div>
   );

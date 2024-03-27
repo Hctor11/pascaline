@@ -6,7 +6,7 @@ const Categories = () => {
     <div className="grid md:grid-cols-3 gap-2">
       {links.map((link) => (
         <>
-          <div className="bg-zinc-100 border rounded-xl p-2">
+          <div className="bg-zinc-100 border rounded-xl p-3">
             <Link className="text-2xl font-semibold hover:underline" href={link.mainLink}>
               {link.name}
             </Link>
@@ -39,5 +39,6 @@ const Categories = () => {
     </div>
   );
 };
+
 
 export default Categories;
