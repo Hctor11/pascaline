@@ -33,17 +33,9 @@ const footerLinks: treeLink[] = [
     headlink: "/phy",
     sublinks: [
       {
-        title: "Free Fall",
-        link: "/Phy/call",
-      },
-      {
-        title: "Motion",
-        link: "/Phy/cotion",
-      },
-      {
-        title: "Coefficient",
-        link: "/Phy/coefficient",
-      },
+        title: "Units converter",
+        link: "/phy/unit",
+      }
     ],
   },{
     head: "Statistics",

@@ -31,20 +31,12 @@ const links: Link[] = [
     submenu: true,
     sublink: [
       {
-        head: "Physics22",
+        head: "Units",
         mySubLinks: [
           {
-            name: "Free Fall",
-            link: "/Phy/call",
-          },
-          {
-            name: "Motion",
-            link: "/Phy/cotion",
-          },
-          {
-            name: "Coefficient",
-            link: "/Phy/coefficient",
-          },
+            name: "Units converter",
+            link: "/phy/unit",
+          }
         ],
       },
     ],

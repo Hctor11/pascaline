@@ -8,7 +8,7 @@ const NavigationLinks = () => {
       {links.map((link, id) => (
         <>
           {/* dekstop menu */}
-          <div key={id} className="md:mb-0 group hover:text-gray-500">
+          <div key={id} className="md:mb-0 group z-10 hover:text-gray-500">
             <Link
               href={`/${link.mainLink}`}
               className="text-3xl p-1 font-semibold md:font-normal md:text-sm cursor-pointer transition-all"
