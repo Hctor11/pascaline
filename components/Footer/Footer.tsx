@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="pt-8 border-t border-zinc-200 mt-auto">
       <div className="">
-        <div className="lg:container flex-col overflow-hidden flex lg:flex-col md:justify-between lg:justify-between lg:w-[74%] m-auto">
+        <div className="lg:container flex-col overflow-hidden flex lg:flex-col md:justify-between lg:justify-between lg:w-[73%] m-auto">
           <Link href="/" className="mb-6 mx-3 lg:mx-0">
             <Image
               src="/NewLogo.svg"
