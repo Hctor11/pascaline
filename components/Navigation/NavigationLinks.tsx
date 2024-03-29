@@ -47,7 +47,7 @@ const NavigationLinks = () => {
           </div>
 
           {/* mobile menu */}
-          <div className="md:hidden mb-3 mt-1">
+          <div className="md:hidden z-10 mb-3 mt-1">
             {link.sublink?.map((sublinks) => (
               <>
                 <div className="">

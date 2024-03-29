@@ -3,7 +3,7 @@ import Sections from "./Sections"
 
 const TitleAndSections = () => {
   return (
-    <div className="flex md:flex-row flex-col gap-2">
+    <div className="flex h-full md:flex-row flex-col gap-2">
       <Title/>
       <Sections/>
     </div>
