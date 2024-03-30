@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CalculatorButton from "./CalculatorButton";
+import OperatorButton from "./OperatorButton";
 
 const Calculator = () => {
   const [firstInput, setFirstInput] = useState<null | string>(null);
@@ -18,7 +19,7 @@ const Calculator = () => {
   const handleSecondInput = (number: string) => {
     secondInput == null
       ? setSecondInput(number)
-      : setSecondInput(firstInput + number);
+      : setSecondInput(secondInput + number);
   };
 
   const handleOperator = (symbol: string) => {
@@ -42,15 +43,29 @@ const Calculator = () => {
     setOperatorSymbol(null)
   }
 
+
+  const handleDecimalPoint = () => {
+    if (operator) {
+      if (secondInput === null || secondInput.indexOf('.') === -1) {
+        setSecondInput((secondInput || '') + '.');
+      }
+    } else {
+      if (firstInput === null || firstInput.indexOf('.') === -1) {
+        setFirstInput((firstInput || '') + '.');
+      }
+    }
+  }
+
   return (
     <div className="border w-full rounded-xl flex flex-col justify-center items-center p-3 h-96">
       <div className="w-full">
         <input
           type="text"
-          className="hover:bg-zinc-100 outline-none cursor-default w-full border rounded-md h-16 text-xl px-2"
+          className="hover:bg-zinc-100 text-right outline-none cursor-default w-full border rounded-md h-16 text-2xl px-3"
           placeholder={operator ? firstInput! : secondInput!}
           readOnly
-          value={firstInput!}
+          value={firstInput || ''}
+          onChange={(e) => handleInput(e.target.value)}
         />
       </div>
       <div className="w-full h-full pt-3 grid grid-cols-7 grid-rows-5 gap-2">
@@ -87,12 +102,11 @@ const Calculator = () => {
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
-        <CalculatorButton
+        <OperatorButton
           content="AC"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={handleClear}
         />
         <CalculatorButton
           content="sin"
@@ -262,12 +276,11 @@ const Calculator = () => {
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
-        <CalculatorButton
+        <OperatorButton
           content="."
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={handleDecimalPoint}
         />
         <CalculatorButton
           content="0"
