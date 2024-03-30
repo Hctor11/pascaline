@@ -7,7 +7,7 @@ const Calculator = () => {
   const [firstInput, setFirstInput] = useState<null | string>(null);
   const [secondInput, setSecondInput] = useState<null | string>(null);
   const [operator, setOperator] = useState(false);
-  const [operatorSymbol, setOperatorSymbol] = useState(null);
+  const [operatorSymbol, setOperatorSymbol] = useState<null | string>(null);
 
   const handleInput = (number: string) => {
     firstInput == null
@@ -21,14 +21,36 @@ const Calculator = () => {
       : setSecondInput(firstInput + number);
   };
 
+  const handleOperator = (symbol: string) => {
+    setOperator(true)
+    setOperatorSymbol(symbol)
+  }
+
+  const handleSumbmit = () => {
+    if(operatorSymbol == "+"){
+      setFirstInput(`${parseFloat(firstInput!) + parseFloat(secondInput!)}`)
+      setSecondInput(null)
+      setOperator(false)
+      setOperatorSymbol(null)
+    }
+  }
+
+  const handleClear = () => {
+    setFirstInput(null)
+    setSecondInput(null)
+    setOperator(false)
+    setOperatorSymbol(null)
+  }
+
   return (
     <div className="border w-full rounded-xl flex flex-col justify-center items-center p-3 h-96">
       <div className="w-full">
         <input
           type="text"
           className="hover:bg-zinc-100 outline-none cursor-default w-full border rounded-md h-16 text-xl px-2"
-          placeholder=""
+          placeholder={operator ? firstInput! : secondInput!}
           readOnly
+          value={firstInput!}
         />
       </div>
       <div className="w-full h-full pt-3 grid grid-cols-7 grid-rows-5 gap-2">
