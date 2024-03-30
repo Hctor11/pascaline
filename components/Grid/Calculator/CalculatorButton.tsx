@@ -13,10 +13,10 @@ const CalculatorButton = ({ firstHandlerFunction, secondHandlerFunction, content
         type="button"
         className={` rounded-md border ${
           type == "operator"
-            ? "bg-zinc-100"
+            ? "bg-zinc-100 hover:bg-zinc-200"
             : type == "number"
-            ? "bg-zinc-300"
-            : "bg-black text-white"
+            ? "bg-zinc-300 hover:bg-zinc-400"
+            : "bg-black text-white hover:bg-zinc-800"
         }`}
         onClick={() => operator ? firstHandlerFunction(content) : secondHandlerFunction(content)}
       >

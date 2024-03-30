@@ -32,8 +32,10 @@ const Calculator = () => {
         />
       </div>
       <div className="w-full h-full pt-3 grid grid-cols-7 grid-rows-5 gap-2">
-        <div className="col-span-2 border bg-zinc-100 rounded-md content-center text-center">
-          <p>deg rag</p>
+        <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 border bg-zinc-100 rounded-md content-center text-center">
+          <button className="px-3">deg</button>
+          <p className="hover:cursor-default">|</p>
+          <button className="px-3">rad</button>
         </div>
       <CalculatorButton
           content="x!"
@@ -169,8 +171,22 @@ const Calculator = () => {
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
-          type="number"
+          content="π"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="e"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="√"
+          type="operator"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
@@ -183,85 +199,71 @@ const Calculator = () => {
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
+          content="2"
           type="number"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
+          content="3"
           type="number"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
+          content="-"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="log"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="ln"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="^"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="."
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="0"
           type="number"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
-          type="number"
+          content="="
+          type="equal"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
         <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
-          operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
-        />
-        <CalculatorButton
-          content="1"
-          type="number"
+          content="+"
+          type="operator"
           operator={operator}
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
