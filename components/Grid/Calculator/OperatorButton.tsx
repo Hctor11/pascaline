@@ -1,7 +1,7 @@
 "use client"
 
 interface props {
-    handlerFunction: () => void;
+    handlerFunction: React.MouseEventHandler<HTMLButtonElement>;
     content: string;
     type: "operator" | "number" | "equal";
     operator: boolean
