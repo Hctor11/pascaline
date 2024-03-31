@@ -1,3 +1,5 @@
+"use client"
+
 interface props {
     handlerFunction: () => void;
     content: string;

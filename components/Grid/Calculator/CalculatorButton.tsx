@@ -1,3 +1,5 @@
+"use client"
+
 interface props {
   firstHandlerFunction: Function;
   secondHandlerFunction: Function;
