@@ -54,6 +54,13 @@ const Calculator = () => {
       setOperator(false);
       setOperatorSymbol(null);
     }
+    if (operatorSymbol == "%") {
+      setFirstInput(`${(parseFloat(firstInput!) % parseFloat(secondInput!))}`);
+      setSecondInput(null);
+      setOperator(false);
+      setOperatorSymbol(null);
+    }
+    
   };
 
   const handleClear = () => {
@@ -114,12 +121,11 @@ const Calculator = () => {
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
-        <CalculatorButton
+         <OperatorButton
           content="%"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator('%')}
         />
         <OperatorButton
           content="AC"
