@@ -9,6 +9,7 @@ const Calculator = () => {
   const [secondInput, setSecondInput] = useState<null | string>(null);
   const [operator, setOperator] = useState(false);
   const [operatorSymbol, setOperatorSymbol] = useState<null | string>(null);
+  const [isRagSelected, setIsRagSelected] = useState(true);
 
   const handleInput = (number: string) => {
     console.log("Updating firstInput:", firstInput);
@@ -31,36 +32,41 @@ const Calculator = () => {
 
   const handleSumbmit = () => {
     if (operatorSymbol == "+") {
-      setFirstInput(`${(parseFloat(firstInput!) + parseFloat(secondInput!))}`);
+      setFirstInput(`${parseFloat(firstInput!) + parseFloat(secondInput!)}`);
       setSecondInput(null);
       setOperator(false);
       setOperatorSymbol(null);
     }
     if (operatorSymbol == "-") {
-      setFirstInput(`${(parseFloat(firstInput!) - parseFloat(secondInput!))}`);
+      setFirstInput(`${parseFloat(firstInput!) - parseFloat(secondInput!)}`);
       setSecondInput(null);
       setOperator(false);
       setOperatorSymbol(null);
     }
     if (operatorSymbol == "x") {
-      setFirstInput(`${(parseFloat(firstInput!) * parseFloat(secondInput!))}`);
+      setFirstInput(`${parseFloat(firstInput!) * parseFloat(secondInput!)}`);
       setSecondInput(null);
       setOperator(false);
       setOperatorSymbol(null);
     }
     if (operatorSymbol == "÷") {
-      setFirstInput(`${(parseFloat(firstInput!) / parseFloat(secondInput!)) === Infinity ? 'error' : (parseFloat(firstInput!) / parseFloat(secondInput!))}`);
+      setFirstInput(
+        `${
+          parseFloat(firstInput!) / parseFloat(secondInput!) === Infinity
+            ? "error"
+            : parseFloat(firstInput!) / parseFloat(secondInput!)
+        }`
+      );
       setSecondInput(null);
       setOperator(false);
       setOperatorSymbol(null);
     }
     if (operatorSymbol == "%") {
-      setFirstInput(`${(parseFloat(firstInput!) % parseFloat(secondInput!))}`);
+      setFirstInput(`${parseFloat(firstInput!) % parseFloat(secondInput!)}`);
       setSecondInput(null);
       setOperator(false);
       setOperatorSymbol(null);
     }
-    
   };
 
   const handleClear = () => {
@@ -94,11 +100,11 @@ const Calculator = () => {
           onChange={(e) => handleInput(e.target.value)}
         />
       </div>
-      <div className="w-full h-full pt-3 grid grid-cols-7 grid-rows-5 gap-2">
+      <div className="hidden w-full h-full pt-3 md:grid grid-cols-7 grid-rows-5 gap-2">
         <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 border bg-zinc-100 rounded-md content-center text-center">
-          <button className="px-3">deg</button>
-          <p className="hover:cursor-default">|</p>
           <button className="px-3">rad</button>
+          <p className="hover:cursor-default">|</p>
+          <button className="px-3">deg</button>
         </div>
         <CalculatorButton
           content="x!"
@@ -121,11 +127,11 @@ const Calculator = () => {
           firstHandlerFunction={handleInput}
           secondHandlerFunction={handleSecondInput}
         />
-         <OperatorButton
+        <OperatorButton
           content="%"
           type="operator"
           operator={operator}
-          handlerFunction={() => handleOperator('%')}
+          handlerFunction={() => handleOperator("%")}
         />
         <OperatorButton
           content="AC"
@@ -179,7 +185,7 @@ const Calculator = () => {
           content="÷"
           type="operator"
           operator={operator}
-          handlerFunction={() => handleOperator('÷')}
+          handlerFunction={() => handleOperator("÷")}
         />
         <CalculatorButton
           content="arcsin"
@@ -227,7 +233,7 @@ const Calculator = () => {
           content="x"
           type="operator"
           operator={operator}
-          handlerFunction={() => handleOperator('x')}
+          handlerFunction={() => handleOperator("x")}
         />
         <CalculatorButton
           content="π"
@@ -275,7 +281,7 @@ const Calculator = () => {
           content="-"
           type="operator"
           operator={operator}
-          handlerFunction={() => handleOperator('-')}
+          handlerFunction={() => handleOperator("-")}
         />
         <CalculatorButton
           content="log"
@@ -321,7 +327,141 @@ const Calculator = () => {
           content="+"
           type="operator"
           operator={operator}
-          handlerFunction={() => handleOperator('+')}
+          handlerFunction={() => handleOperator("+")}
+        />
+      </div>
+      <div className="md:hidden grid w-full h-full pt-3 grid-cols-4 grid-rows-5 gap-2">
+        <CalculatorButton
+          content="π"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <CalculatorButton
+          content="e"
+          type="operator"
+          operator={operator}
+          firstHandlerFunction={handleInput}
+          secondHandlerFunction={handleSecondInput}
+        />
+        <OperatorButton
+          content="%"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleOperator("%")}
+        />
+        <OperatorButton
+          content="AC"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleClear()}
+        />
+        <CalculatorButton
+          content="7"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="8"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="9"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <OperatorButton
+          content="÷"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleOperator("÷")}
+        />
+        <CalculatorButton
+          content="4"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="5"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="6"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <OperatorButton
+          content="x"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleOperator("x")}
+        />
+        <CalculatorButton
+          content="1"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="2"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <CalculatorButton
+          content="3"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <OperatorButton
+          content="-"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleOperator("-")}
+        />
+        <OperatorButton
+          content="."
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleDecimalPoint()}
+        />
+        <CalculatorButton
+          content="0"
+          type="number"
+          operator={operator}
+          firstHandlerFunction={handleSecondInput}
+          secondHandlerFunction={handleInput}
+        />
+        <OperatorButton
+          content="="
+          type="equal"
+          operator={operator}
+          handlerFunction={() => handleSumbmit()}
+        />
+        <OperatorButton
+          content="+"
+          type="operator"
+          operator={operator}
+          handlerFunction={() => handleOperator("+")}
         />
       </div>
     </div>
