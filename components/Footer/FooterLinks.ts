@@ -43,16 +43,8 @@ const footerLinks: treeLink[] = [
     sublinks: [
         {
             title: "Mean",
-            link: "/Math/mean",
-          },
-          {
-            title: "Geometric Mean",
-            link: "/Math/geomean",
-          },
-          {
-            title: "Standard Deviation",
-            link: "/Math/std",
-          },
+            link: "/stats/mean",
+          }
     ]
   },{
     head: 'About',

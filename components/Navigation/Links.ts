@@ -47,20 +47,12 @@ const links: Link[] = [
     submenu: true,
     sublink: [
       {
-        head: "Statistics33",
+        head: "Data",
         mySubLinks: [
           {
             name: "Mean",
-            link: "/Math/mean",
-          },
-          {
-            name: "Geometric Mean",
-            link: "/Math/geomean",
-          },
-          {
-            name: "Standard Deviation",
-            link: "/Math/std",
-          },
+            link: "/stats/mean",
+          }
         ],
       },
     ],
