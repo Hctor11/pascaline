@@ -25,6 +25,7 @@ const Sections = () => {
         <Link href="/phy">
           <div className="bg-zinc-900 h-28 flex items-center justify-center md:h-20 lg:h-16 rounded-md hover:bg-zinc-800 aspect-square">
             <Image
+              className="hover:rotate-180 transition-all"
               src="/categoryIcons/physics.svg"
               alt="math icon"
               width={50}
@@ -38,6 +39,7 @@ const Sections = () => {
         <Link href="/stats">
           <div className="bg-zinc-900 h-28 flex items-center justify-center md:h-20 lg:h-16 rounded-md hover:bg-zinc-800 aspect-square">
             <Image
+              className="transition-all"
               src="/categoryIcons/statistics.svg"
               alt="math icon"
               width={40}
