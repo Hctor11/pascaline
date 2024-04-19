@@ -16,12 +16,12 @@ const CategoryIterator = ({ category }: props) => {
                   <h2 className="font-normal text-xl">
                     {sublinks.head}
                   </h2>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col md:flex-row gap-2">
                   {sublinks.mySubLinks.map((sublinks) => (
                     <>
                       <Link
                         href={sublinks.link}
-                        className="p-1 rounded-md inline-flex border hover:bg-zinc-200"
+                        className="p-3 rounded-md inline-flex border hover:bg-zinc-200"
                       >
                         {sublinks.name}
                       </Link>
