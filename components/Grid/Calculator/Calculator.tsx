@@ -9,7 +9,7 @@ const Calculator = () => {
   const [secondInput, setSecondInput] = useState<null | string>(null);
   const [operator, setOperator] = useState(false);
   const [operatorSymbol, setOperatorSymbol] = useState<null | string>(null);
-  const [isRagSelected, setIsRagSelected] = useState(true);
+  const [isRadSelected, setIsRadSelected] = useState(true);
 
   const handleInput = (number: string) => {
     console.log("Updating firstInput:", firstInput);
@@ -88,6 +88,14 @@ const Calculator = () => {
     }
   };
 
+  const handleDegreeButtonClick = (option: "rad" | "deg") => {
+    if (option === "rad" && !isRadSelected) {
+      setIsRadSelected(true); 
+    } else if (option === "deg" && isRadSelected) {
+      setIsRadSelected(false);
+    }
+  };
+
   return (
     <div className="border w-full rounded-xl flex flex-col justify-center items-center p-3 h-96">
       <div className="w-full">
@@ -101,10 +109,12 @@ const Calculator = () => {
         />
       </div>
       <div className="hidden w-full h-full pt-3 md:grid grid-cols-7 grid-rows-5 gap-2">
-        <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 border bg-zinc-100 rounded-md content-center text-center">
-          <button className="px-3">rad</button>
+        <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 border bg-zinc-100 rounded-md content-center text-center text-zinc-400">
+          <button className={`px-3 rounded-md ${isRadSelected ? ' text-black' : ''}`}
+        onClick={() => handleDegreeButtonClick('rad')}>rad</button>
           <p className="hover:cursor-default">|</p>
-          <button className="px-3">deg</button>
+          <button className={`px-3 ${!isRadSelected ? 'text-black' : ''}`}
+        onClick={() => handleDegreeButtonClick('deg')}>deg</button>
         </div>
         <CalculatorButton
           content="x!"
