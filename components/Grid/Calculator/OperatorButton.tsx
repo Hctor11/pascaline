@@ -4,11 +4,12 @@ interface props {
     handlerFunction: React.MouseEventHandler<HTMLButtonElement>;
     content: string;
     type: "operator" | "number" | "equal";
-    operator: boolean
+    operator: boolean,
+    isEnabled: boolean
   }
   
 
-const OperatorButton = ({ handlerFunction, content, type}: props) => {
+const OperatorButton = ({ handlerFunction, content, type, isEnabled}: props) => {
   return (
     <>
       <button
@@ -19,7 +20,7 @@ const OperatorButton = ({ handlerFunction, content, type}: props) => {
             : type == "number"
             ? "bg-zinc-300 hover:bg-zinc-400"
             : "bg-black text-white hover:bg-zinc-800"
-        }`}
+        } ${isEnabled ? "" : "bg-gray-300 cursor-not-allowed opacity-50"}`}
         onClick={handlerFunction}
       >
         {content}
