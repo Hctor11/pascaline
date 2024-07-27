@@ -22,6 +22,7 @@ const OperatorButton = ({ handlerFunction, content, type, isEnabled}: props) => 
             : "bg-black text-white hover:bg-zinc-800"
         } ${isEnabled ? "" : "bg-gray-300 cursor-not-allowed opacity-50"}`}
         onClick={handlerFunction}
+        disabled={!isEnabled}
       >
         {content}
       </button>

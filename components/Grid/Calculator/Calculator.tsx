@@ -9,7 +9,7 @@ const Calculator = () => {
   const [secondInput, setSecondInput] = useState<null | string>(null);
   const [operator, setOperator] = useState(false);
   const [operatorSymbol, setOperatorSymbol] = useState<null | string>(null);
-  const [isRadSelected, setIsRadSelected] = useState(true);
+  const [isRadSelected, setIsRadSelected] = useState(false);
 
   const handleInput = (number: string) => {
     console.log("Updating firstInput:", firstInput);
@@ -109,41 +109,41 @@ const Calculator = () => {
         />
       </div>
       <div className="hidden w-full h-full pt-3 md:grid grid-cols-7 grid-rows-5 gap-2">
-        <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 border bg-zinc-100 rounded-md content-center text-center text-zinc-400">
+        <div className="flex hover:bg-zinc-200 justify-evenly items-center col-span-2 cursor-not-allowed bg-zinc-100 rounded-md content-center text-center text-zinc-400">
           <button
-            className={`px-3 rounded-md ${isRadSelected ? " text-black" : ""}`}
+            className={`cursor-not-allowed px-3 rounded-md ${isRadSelected ? " " : ""}`}
             onClick={() => handleDegreeButtonClick("rad")}
           >
             rad
           </button>
-          <p className="hover:cursor-default">|</p>
+          <p className="">|</p>
           <button
-            className={`px-3 ${!isRadSelected ? "text-black" : ""}`}
+            className={`cursor-not-allowed px-3 ${isRadSelected ? "" : ""}`}
             onClick={() => handleDegreeButtonClick("deg")}
           >
             deg
           </button>
         </div>
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content="x!"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content="("
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content=")"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
         <OperatorButton
           isEnabled={true}
@@ -166,19 +166,19 @@ const Calculator = () => {
           operator={operator}
           handlerFunction={() => handleClear()}
         />
-        <CalculatorButton
+        <OperatorButton
+          isEnabled={false}
           content="cos"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleClear()}
         />
-        <CalculatorButton
+        <OperatorButton
+          isEnabled={false}
           content="tan"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleClear()}
         />
         <CalculatorButton
           content="7"
@@ -208,26 +208,26 @@ const Calculator = () => {
           operator={operator}
           handlerFunction={() => handleOperator("÷")}
         />
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content="arcsin"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content="arccos"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
+         isEnabled={false}
           content="arctan"
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
         <CalculatorButton
           content="4"
