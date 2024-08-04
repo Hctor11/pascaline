@@ -257,26 +257,26 @@ const Calculator = () => {
           operator={operator}
           handlerFunction={() => handleOperator("x")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="π"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="e"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="√"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
         <CalculatorButton
           content="1"
@@ -306,26 +306,26 @@ const Calculator = () => {
           operator={operator}
           handlerFunction={() => handleOperator("-")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="log"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="ln"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
-        <CalculatorButton
+        <OperatorButton
           content="^"
+          isEnabled={false}
           type="operator"
           operator={operator}
-          firstHandlerFunction={handleInput}
-          secondHandlerFunction={handleSecondInput}
+          handlerFunction={() => handleOperator("%")}
         />
         <OperatorButton
           isEnabled={true}
