@@ -31,11 +31,11 @@ const links: Link[] = [
     submenu: true,
     sublink: [
       {
-        head: "Units",
+        head: "Vectors",
         mySubLinks: [
           {
-            name: "Units converter",
-            link: "/phy/unit",
+            name: "Cross product multiplication",
+            link: "/phy/crossprod",
           }
         ],
       },
